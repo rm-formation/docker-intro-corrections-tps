@@ -1,0 +1,9 @@
+Depuis un terminal dans le dossier ou se trouve le fichier Dockerfile associé :
+- docker build -t image-tp4 .
+    -> -t permet de nommer notre nouvelle image
+    -> Le . final permet de pointer vers le dossier courant, qui servira de chemin de départ pour les commandes COPY que l'on pourrait utiliser dans le Dockerfile
+- Lancer l'image via docker run -tid -p 8080:80 --name docker-tp4 image-tp4
+- Tester via http://localhost:8080
+- Bonus du multi-stage build, en faisant docker image ls, on constate que l'image image-tp4 pèse moins de 200mo, contre plus d'1 Go pour image-tp3, à cause de l'installation de node et npm
+
+

@@ -1,0 +1,6 @@
+Depuis un terminal dans le dossier ou se trouve le fichier Dockerfile associé :
+- docker build -t image-tp3 .
+    -> -t permet de nommer notre nouvelle image
+    -> Le . final permet de pointer vers le dossier courant, qui servira de chemin de départ pour les commandes COPY que l'on pourrait utiliser dans le Dockerfile
+- Lancer l'image via docker run -tid -p 8080:5173 --name docker-tp3 image-tp3
+- Tester encore une fois via http://localhost:8080

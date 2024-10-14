@@ -1,0 +1,6 @@
+- Stopper le conteneur du TP1 (Mais ne pas le supprimer !)
+- docker commit docker-tp1 image-tp2
+- Supprimer le conteneur initial : docker container rm docker-tp1
+- Relancer un nouveau conteneur depuis la nouvelle image :
+- docker run -tid -p 8080:5173 --name docker-tp2 image-tp2
+- Tester en se rendant à l'adresse http://localhost:8080

@@ -1,0 +1,23 @@
+- docker pull ubuntu
+- docker run -tid -p 8080:5173 --name docker-tp1 ubuntu
+  -> les paramètres t & i permettent de rendre le container interactif via un terminal de commande
+  -> le paramètre d permet de détacher immédiatement le conteneur
+  -> --name permet de nommer le conteneur
+  -> -p permet d'associer le port local 8080 avec le port 5173 du conteneur, qui sera utilisé par Vite
+- docker exec -ti docker-tp1 /bin/bash
+  -> Permet de se connecter sur un terminal à l'intérieur du conteneur, et de manipuler directement ses fichiers internes
+Les commandes suivantes se font dans le conteneur :
+- apt update
+  -> On met à jour le gestionnaire de paquets d'ubuntu
+- apt install nodejs npm git
+  -> On installe les outils nécessaires
+- mkdir /usr/web
+- cd /usr/web
+- git clone https://github.com/rm-formation/docker-intro-tp1.git
+- cd docker-into-tp1
+- npm i
+  -> On installe les dépendances du projet via npm
+- npm run dev -- --host
+  -> On lance le serveur de développement de Vite. Le paramètre --host permet d'indiquer qu'on souhaite pouvoir y accéder de l'extérieur (du conteneur, dans ce cas)
+- Sur notre système hôte, on se rend depuis un navigateur sur "http://localhost:8080"
+- Normalement, le site s'affiche : TP terminé !
